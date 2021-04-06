@@ -19,6 +19,23 @@
     .active, .accordion:hover {
       background-color: #ccc; 
     }
+
+    .accordion2 {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+    
+    .active, .accordion2:hover {
+      background-color: #ccc; 
+    }
     
     .panel {
       padding: 0 18px;
@@ -57,7 +74,7 @@
 
   <h1>Better Call Saul</h1>
   {% for season, group in BCS %}
-  <button class="accordion"><b>Season {{season}}</b></button>
+  <button class="accordion2"><b>Season {{season}}</b></button>
     <div class="panel">
         {% for content in group %}
         <a href="/episode/{{content.episode_id}}"><li class="list-group-item">{{content.episode}}. {{content.title}}</li></a>
@@ -66,7 +83,7 @@
   {% endfor %}
 
   <script>
-    var acc = document.getElementsByClassName("accordion");
+    var acc = document.getElementsByClassName("accordion2");
     var i;
     
     for (i = 0; i < acc.length; i++) {

@@ -1,0 +1,14 @@
+{% extends "breakingbad/base.html" %}
+
+{% block content %}
+
+<h2><u>Episode:</u> {{ episode.title }}</h2>
+<h4><b>{{episode.series}}</b></h4>
+<h4>S{{episode.season}}, E{{episode.episode}}</h4>
+<p>Air date: {{episode.air_date}}
+</p>
+<p> Characters:</p>
+{% for character in episode.characters %}
+<li><a href="/character/{{character}}">{{character}}</a></li>
+{% endfor %}
+{% endblock content%}

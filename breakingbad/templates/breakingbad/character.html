@@ -1,0 +1,71 @@
+{% extends "breakingbad/base.html" %}
+
+{% block content %}
+<div class="container-fluid" style="background-color:#222222;">
+    <div class="container-fluid" style="display:flex;align-items: center;">
+        <div class="container">
+            <h2 style="color:white">{{character.name}}</h2>
+            <div class="image">
+                <img src="{{character.img}}" width="200" height="250" alt=""> 
+            </div>
+            <br/><br/><br/>
+        </div>
+        <div class = "container" style="color:white;">
+            <br/><br/>
+            <p>Portrayed by {{character.portrayed}}<br/><br/>
+                Nickname: {{character.nickname}} <br/><br/>
+                Occupation: 
+                {% for occupation in character.occupation %}
+                    <li>{{occupation}}</li>
+                {% endfor %}<br/>
+                Status: {{character.status}}<br/><br/>
+            </p>
+
+        </div>
+        <div class="container" style="color:white;">
+            <p>
+            {% if character.category != 'Better Call Saul'%}
+            Breaking Bad appearances
+            {% for appearance in character.appearance %}
+                <li>{{appearance}}</li>
+            {% endfor %}
+        {% endif %}<br/><br/>
+        </p>
+        </div>
+        <div class="container" style="color:white;">
+            <p>
+
+        {% if character.category != 'Breaking Bad'%}
+            Better Call Saul appearances
+            {% for appearance in character.better_call_saul_appearance %}
+            <li>{{appearance}}</li>
+            {% endfor %}
+        {% endif %}
+        </p>
+        </div>
+    
+    </div>
+    <div class="container-fluid" style="color:white">
+        <h4>Quotes</h4>
+        {% for quote in quotes %}
+        <li>{{quote.quote}}</li>
+        {% endfor %}
+    </div>
+    <br/><br/>
+</div>
+
+{% endblock content%}
+
+{% if character.category != 'Better Call Saul'%}
+Breaking Bad appearances
+{% for appearance in character.appearance %}
+    <li>{{appearance}}</li>
+{% endfor %}
+{% endif %}<br/><br/>
+
+{% if character.category != 'Breaking Bad'%}
+Better Call Saul appearances
+{% for appearance in character.better_call_saul_appearance %}
+<li>{{appearance}}</li>
+{% endfor %}
+{% endif %}

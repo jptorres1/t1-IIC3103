@@ -27,22 +27,29 @@
             {% if character.category != 'Better Call Saul'%}
             Breaking Bad appearances
             {% for appearance in character.appearance %}
-                <li>{{appearance}}</li>
+                <li><a href="/" onclick="saveData({{appearance}});">Season {{appearance}}</a></li>
             {% endfor %}
         {% endif %}<br/><br/>
         </p>
         </div>
+        <script>function saveData(data){
+            localStorage.setItem("bbad", data);
+          }</script>
+
         <div class="container" style="color:white;">
             <p>
 
         {% if character.category != 'Breaking Bad'%}
             Better Call Saul appearances
             {% for appearance in character.better_call_saul_appearance %}
-            <li>{{appearance}}</li>
+            <li><a href="/" onclick="saveData2({{appearance}});">Season {{appearance}}</a></li>
             {% endfor %}
         {% endif %}
         </p>
         </div>
+        <script>function saveData2(data){
+            localStorage.setItem("bcsaul", data);
+          }</script>
     
     </div>
     <div class="container-fluid" style="color:white">

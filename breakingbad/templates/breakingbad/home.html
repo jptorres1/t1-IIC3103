@@ -41,7 +41,15 @@
     <script>
       var acc = document.getElementsByName("breakingbad");
       var i;
-      
+      var saved = localStorage.getItem("bbad");
+      console.log(saved);
+      if (saved)
+      {
+        acc[saved-1].classList.toggle("active");
+        var panel = acc[saved-1].nextElementSibling;
+          panel.style.display = "block";
+          window.localStorage.clear();
+      }
       for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function() {
           this.classList.toggle("active");
@@ -68,6 +76,15 @@
   <script>
     var acc = document.getElementsByName("bettercallsaul");
     var i;
+    var saved = localStorage.getItem("bcsaul");
+    console.log(saved);
+      if (saved)
+      {
+        acc[saved-1].classList.toggle("active");
+        var panel = acc[saved-1].nextElementSibling;
+          panel.style.display = "block";
+          window.localStorage.clear();
+      }
     
     for (i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function() {

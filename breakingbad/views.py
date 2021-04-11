@@ -31,3 +31,10 @@ def character(request, name):
     quotes = requests.get(f'https://tarea-1-breaking-bad.herokuapp.com/api/quote?author={name}').json()
 
     return render(request, 'breakingbad/character.html', {'character': character, 'quotes': quotes})
+
+def searchbar(request):
+    name = request.GET.get('name')
+    characters = requests.get(f'https://tarea-1-breaking-bad.herokuapp.com/api/characters?name={name}').json()
+    
+    return render(request, 'breakingbad/searchbar.html', {'characters': characters})
+

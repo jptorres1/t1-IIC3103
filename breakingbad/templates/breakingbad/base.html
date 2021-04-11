@@ -22,11 +22,11 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/">WalterWhite.com</a>
         </div>
-        <form class="navbar-form navbar-right" action="/character">
+        <form class="navbar-form navbar-right" method="get" action="{% url 'searchbar' %}">
           <div class="form-group">
             <input id= "form1" type="text" class="form-control" name='name' placeholder="Search character">
           </div>
-          <a type="submit" class="btn btn-default">Submit</a>
+          <button type="submit" class="btn btn-default">Submit</button>
         </form>
       </div>
     </nav>

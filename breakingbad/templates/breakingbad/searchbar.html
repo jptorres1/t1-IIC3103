@@ -1,0 +1,10 @@
+{% extends "breakingbad/base.html" %}
+
+{% block content %}
+
+    <h3>Resultados: </h3>
+    {% for character in characters%}
+    <li><a href="/character/{{character.name}}">{{character.name}}</a></li>
+    {% endfor %}
+
+{% endblock content%}
